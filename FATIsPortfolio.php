@@ -3,14 +3,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Willy Wonkas - Personal Portfolio Website Template" />
 	<meta name="keywords" content="blog, business card, creative, creative portfolio, cv theme, online resume, personal, portfolio, professional cv, responsive portfolio, resume, resume theme, vcard" />
-	<meta name="author" content="willy wonka" />
     <title>Fatlind's Portfolio</title>
   <!--favicon-img--> 
-   <link rel="icon" type="image/png" href="images/favicon.png">
+   <link rel="icon" type="image/png" href="images/FIcon.png">
    <!--favicon-img-->
    <!--main css file should not be removed -->
     <link rel="stylesheet" href="css/index.css">
