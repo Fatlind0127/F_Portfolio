@@ -220,7 +220,7 @@ include("Includes/Connect.php");
                      <br>
                <span class="about-second-line"> With 4 yreas as a junior Web Developer and 2 years of experience as a advanced Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step while working.</span>
                <div class="cv">
-                <a href="Fati-cv.pdf"><button>Download <span class="colors">CV</span></button></a>
+                <a href="Fati-cv1.pdf"><button>Download <span class="colors">CV</span></button></a>
             </div>
             </div>
             <!--about picture-->
