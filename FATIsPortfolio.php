@@ -1,58 +1,4 @@
 
-<?php
-// Check if the cookie 'visited' is set
-if (!isset($_COOKIE['visited'])) {
-    // Set a cookie to expire in 1 day (86400 seconds)
-    setcookie('visited', '', time() - 3600, "/");
-    $showPopup = true;
-} else {
-    $showPopup = false;
-}
-
-// Optional: Uncomment this block to clear the 'visited' cookie for testing
-// setcookie('visited', '', time() - 3600, "/"); // This will remove the cookie
-?>
-
-<?php
-// Load Composer's autoloader if installed with Composer
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require 'vendor/autoload.php'; // Adjust if PHPMailer is installed via Composer
-
-// Create an instance of PHPMailer
-$mail = new PHPMailer(true);
-
-try {
-    // Server settings
-    $mail->SMTPDebug = 0;                      // Disable verbose debug output (2 for debugging)
-    $mail->isSMTP();                           // Set mailer to use SMTP
-    $mail->Host       = 'smtp.gmail.com';      // Set SMTP server
-    $mail->SMTPAuth   = true;                  // Enable SMTP authentication
-    $mail->Username   = 'your-email@gmail.com'; // Your Gmail address
-    $mail->Password   = 'your-password';       // Your Gmail password (Note: Use App Password for Gmail)
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  // Enable TLS encryption
-    $mail->Port       = 587;                   // TCP port for TLS
-
-    // Recipients
-    $mail->setFrom('your-email@gmail.com', 'Your Name'); // Sender's email and name
-    $mail->addAddress('recipient@example.com', 'Recipient Name'); // Add a recipient (email and name)
-    
-    // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';               // Subject of the email
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>'; // HTML body
-    $mail->AltBody = 'This is the plain text version of the message'; // Plain text body
-
-    // Send email
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,25 +17,21 @@ try {
     <!--main css file-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
 
-    <script>
-        function showPopup() {
-            // JavaScript alert with custom text and button
-            alert("NOTE: This Portfolio is just to show u about me and my work. It is a taken template from internet!");
-        }
-    </script>
 </head>
 <body>
 
-<?php if ($showPopup): ?>
-    <script>
-        // Trigger the popup only if it's the user's first visit
-        showPopup();
-    </script>
-<?php endif; ?>
 
 <?php 
 include("Includes/Connect.php");
 ?>
+
+
+
+</script>
+
+    
+
+    
 
     <!--contains all the div-->
     <div id="all">
@@ -118,9 +60,9 @@ include("Includes/Connect.php");
                 <span class="close-second"></span>
             </div>
             <div class="navigation-links">
-                <a href="#home1" data-text="HOME" id="home-link" >HOME</a>
+                <a href="/Portfolio/F_Portfolio/FATIsPortfolio.php" data-text="HOME" id="home-link" >HOME</a>
                 <a href="#" data-text="ABOUT" id="about-link" >ABOUT</a>
-                <a href="#" data-text="BLOG" id="blog-link" >BLOG</a>
+                <a href="#" data-text="CERTEFICATES" id="blog-link" >CERTEFICATES</a>
                 <a href="#" data-text="PORTFOLIO" id="portfolio-link" >PORTFOLIO</a>
                 <a href="#" data-text="CONTACT" id="contact-link" >CONTACT</a>
             </div>
@@ -128,13 +70,14 @@ include("Includes/Connect.php");
         <!--Navigator-Fullscreen END-->
           <!--Home Page-->
         <!--Menubar-->
-        <div id="navigation-bar">
-            <img src="images/fAA.png" alt="logo">
+        <div id="navigation-bar" >
+         <img src="images/fAA.png" href="/Portfolio/F_Portfolio/FATIsPortfolio.php"alt="logo" >
             <div class="menubar">
                 <span class="first-span"></span>
                 <span class="second-span"></span>
                 <span class="third-span"></span>
             </div>
+            
         </div>
         <!--Menubar End-->
           <!--Header-->
@@ -437,7 +380,7 @@ include("Includes/Connect.php");
                      </div>
                      <div class="portfolio-text">
                          <h2>Alcatrazz Fashion </h2>
-                         <p>This is my first E-commerce web that i created for my shop with my skills with Front-end - HTML/CSS/JS/BOOTSTRAP!</p>
+                         <p>This is my first E-commerce web that i created for my shop with my skills in Front-end - HTML/CSS/JS/BOOTSTRAP!</p>
                          <div class="button"><a href="HtmlCssJsProject/watcher-html/index.html"><button><span class="index"> View Project<i class="gg-arrow-right"></i></span></button></a></div>
                      </div>
                  </div>
@@ -447,7 +390,7 @@ include("Includes/Connect.php");
                     </div>
                     <div class="portfolio-text">
                         <h2>EduFlex for School</h2>
-                        <p>This is my php project with some regjister form and login simple, Php</p>
+                        <p>This is my PhP project with some Register-Form and Login simple.</p>
                         <div class="button"><a href="coliprojekt/index.php"><button><span class="index"> View Project<i class="gg-arrow-right"></i></span></button></a></div>
                     </div>
                 </div>
@@ -458,18 +401,17 @@ include("Includes/Connect.php");
                     </div>
                     <div class="portfolio-text">
                         <h2>Shtepia Modes "FATI" - Laravel</h2>
-                        <p>This is my e-Commerce Laracel Projekt, which is created about my wedding dresses shop, this is my biggest project ever and im trying to advance this project in time and lunch it on goole soon. </p>
+                        <p>This is my e-Commerce Laravel Project, which is created about my wedding dresses shop, this is my biggest project ever and im trying to advance this project in time and lunch it on google as soon as possible </p>
                         <div class="button"><a href="#"><button><span class="index"> View Project<i class="gg-arrow-right"></i></span></button></a></div>
                     </div>
                 </div>
                 <div class="portfolio portfolio-fourth">
                     <div class=" portfolio-image">
-                        <img src="images/portfolio-fourth.jpg" alt="portfolio-fourth">
+                        <img src="images/grosso.png" alt="portfolio-fourth">
                     </div>
                     <div class="portfolio-text">
-                        <h2>Wow Graphics</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ut optio repellat cupiditate
-                             expedita eius dignissimos. Id cumque placeat minima ad laudantium suscipit voluptatem ducimus</p>
+                        <h2>Grosso's Food</h2>
+                        <p>This project I created for some of my friends that own the fast food shop and I'm still not ready to post it, so this project is comming soon (I'm working on it)! </p>
                         <div class="button"><a href="#"><button><span class="index"> View Project<i class="gg-arrow-right"></i></span></button></a></div>
                     </div>
                 </div>
@@ -515,84 +457,91 @@ include("Includes/Connect.php");
                     </div>
                 </div>
                 </div>
-        <div class="blog-header"> Blogs</span>
-            <span class ="header-caption"> My Latest <span class="color"> blog posts.</span></span></div>
+        <div class="blog-header"> Certeficates</span>
+            <span class ="header-caption"> My Latest <span class="color"> Certeficates.</span></span></div>
             <div class="blog-content">
                  <div class="blogs">
-                     <a href="#">
+                     <a href="images/laravel.pdf">
                      <div class="img">
-                         <img src="images/post-one.jpg" alt="blog-one">
-                        <div class="blog-date">8 May,20</div>
+                         <img src="images/laravel.jpg" alt="blog-one">
+                        <div class="blog-date">15 may,2024</div>
                      </div>
-                     <div class="blog-text">
-                         <h3>Harleys In Hawaai</h3>
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus alias dolore recusandae illum, corrupti quo 
-                             veniam saepe aliquid! Quis voluptates ratione consequuntur vel, perferendis cum provident? Magnam fugiat voluptas
-                              libero.</p>
+                     <div class="blog-text" style="overflow-y: auto;">
+                         <h3>Laravel Certificates.</h3>
+                         <p>This certificate recognizes the successful completion of an advanced Laravel development course. 
+                            Through this program, I gained comprehensive knowledge of Laravel, a PHP framework that empowers efficient and scalable web development. 
+                            The certification covers key concepts such as MVC architecture, database migrations, Eloquent ORM, authentication, and realtime event broadcasting, 
+                            equipping me with the skills to build robust web applications. This qualification is endorsed by [Digital School Prizren], 
+                            ensuring a strong foundation in modern web development best practices.  
+                         </p>
                      </div></a>
                  </div>      
                  <div class="blogs">
-                    <a href="#">
+                    <a href="images/backend.pdf">
                     <div class="img">
-                        <img src="images/post-two.jpg" alt="blog-two">
-                        <div class="blog-date">16 Jan,20</div>
+                        <img src="images/backend.jpg" alt="blog-two" style=" object-fit: cover;">
+                        <div class="blog-date">08 Nov,2023</div>
                     </div>
                     <div class="blog-text">
-                        <h3>Key To Be Productive</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt maiores, 
-                            recusandae cupiditate ducimus a non tempora, architecto obcaecati eaque ipsum assumenda harum dolorum iusto tenetur
-                             eius eligendi dolor magnam sit!</p>
+                        <h3>Back-End Certificates.</h3>
+                        <p>I have successfully completed an extensive back-end development certification, which covers key areas such as database management, 
+                            server-side logic, API integration, and security best practices. This certification reflects my commitment to creating scalable, robust, 
+                            and secure back-end solutions for web applications.</p>
                     </div></a>
                 </div>      
                 <div class="blogs">
-                    <a href="#">
+                    <a href="images/frontend.pdf">
                     <div class="img">
-                        <img src="images/post-three.jpg" alt="blog-three">
-                        <div class="blog-date">30 Nov,19</div>
+                        <img src="images/frontend.jpg" alt="blog-three">
+                        <div class="blog-date">2 Nov,2022</div>
                     </div>
-                    <div class="blog-text">
-                        <h3>Caffeine Addict</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo nostrum impedit 
-                            ipsam perspiciatis ratione sapiente quasi optio reprehenderit, labore consequuntur suscipit cum quas.
-                             Officiis dolorem asperiores, ut necessitatibus quas doloremque?</p>
+                    <div class="blog-text" style="overflow-y: auto;">
+                        <h3>Front-End Certeficate</h3>
+                        <p>I am proud to have earned a certification in Front-End Development, which represents my proficiency in building visually appealing, 
+                            responsive, and user-friendly websites. This certification has equipped me with a solid understanding of key front-end technologies, 
+                            including HTML, CSS, and JavaScript, as well as frameworks and libraries such as React and Bootstrap.
+Throughout the certification process, I demonstrated my ability to create intuitive and dynamic user interfaces, implement modern web design principles,
+ and ensure cross-browser compatibility. I have also gained hands-on experience with version control systems like Git,
+  which enhances my capability to collaborate effectively within development teams.</p>
                     </div></a>
                 </div>
                 <div class="blogs">
-                    <a href="#">
+                    <a href="images/junior.pdf">
                     <div class="img">
-                        <img src="images/post-four.jpg" alt="blog-four">
-                        <div class="blog-date">6 Jul,19</div>
+                        <img src="images/junior.jpg" alt="blog-four">
+                        <div class="blog-date">10 Nov,2021</div>
                     </div>
-                    <div class="blog-text">
-                        <h3>Web Development</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, veniam ratione quam vitae,
-                             quibusdam explicabo rem debitis velit ipsa repellat, impedit nulla fuga? Amet corporis praesentium quae.
-                              Sed, quibusdam necessitatibus.</p>
+                    <div class="blog-text" style="overflow-y: auto;">
+                        <h3>Junior Programmer Certeficate</h3>
+                        <p>I am excited to have earned a certification as a Junior Programmer, affirming my foundational skills and knowledge in programming.
+                             This certification highlights my proficiency in core programming languages, including Python, JavaScript, and Java, 
+                             and my ability to apply these skills to real-world coding challenges.
+                             This certification reflects my commitment to mastering programming fundamentals and my readiness to contribute effectively to software development projects. 
+                             It also showcases my enthusiasm for learning and growing in the field of programming.</p>
                     </div></a>
                 </div>  
                 <div class="blogs">
                     <a href="#">
                     <div class="img">
-                        <img src="images/post-five.jpg" alt="blog-five">
+                        <img src="images/azure.png" alt="blog-five">
                         <div class="blog-date">1 Jun,19</div>
                     </div>
                     <div class="blog-text">
-                        <h3>Work From Home</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sunt eum necessitatibus rem 
-                            dignissimos nulla mollitia cumque, provident officiis non vitae? Animi aut doloremque illum, soluta hic minus 
-                            sint explicabo..</p>
+                        <h3>Microsoft Azure, cloud, Linux Training </h3>
+                        <p>I am pleased to have completed comprehensive training in Microsoft Azure, cloud computing, and Linux at ITP Prizren Innovation. 
+                            This training has provided me with a robust foundation in managing and deploying cloud solutions, 
+                            leveraging the capabilities of Microsoft Azure to build scalable and secure applications.</p>
                     </div></a>
                 </div>  
                 <div class="blogs">
-                    <a href="#">
+                    <a href="images/remzi.png">
                     <div class="img">
-                        <img src="images/post-six.jpg" alt="blog-six">
-                        <div class="blog-date">28 Feb,19</div>
+                        <img src="images/remzi.png" alt="blog-six">
+                        <div class="blog-date">17 june,2021-2024</div>
                     </div>
                     <div class="blog-text">
-                        <h3>Business Trip</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo tempora dolorum fuga ratione, unde, 
-                            ex quaerat iste numquam nemo nihil nobis rem sint quia recusandae dignissimos quos ut rerum nam.</p>
+                        <h3>Gymnasium High-School Diploma</h3>
+                        <p>I was graduated by "Remzi Ademaj" High-School Gymnasium on June 17, 2024 in Prizren. I was a good student with grades, especially in IT.</p>
                     </div></a>
                 </div>        
             </div>
@@ -641,21 +590,22 @@ include("Includes/Connect.php");
         <div class="contact-header-caption"> <span class="color"> Get</span> In Touch.</div></div>
         <div class="contact-content">
             <!--Contact form-->
-             <div class="contact-form">
-                 <div class="form-header">
-                     Message Me
-                 </div>
-                 <form id="myForm" action="#">
-                    <div class="input-line">
-                        <input  id="name" type="text" placeholder="Name" class="input-name">
-                        <input id="email" type="email" placeholder="Email"  class="input-name">
-                    </div>
-                    <input type="text" id="subject" placeholder="subject" class="input-subject">
-                    <textarea id ="body" class="input-textarea" placeholder="message"></textarea>
-                    <button type="button" id ="submit" value="send">Submit</button>
-                 </form>
-               
-             </div>
+
+          
+            <<div class="contact-form">
+    <div class="form-header">Message Me</div>
+    <form id="myForm" method="POST">
+        <div class="input-line">
+            <input id="name" type="text" placeholder="Name" name="name" class="input-name" required>
+            <input id="email" type="email" placeholder="Email" name="email" class="input-name" required>
+        </div>
+        <input type="text" id="subject" name="subject" placeholder="Subject" class="input-subject" required>
+        <textarea id="body" name="message" class="input-textarea" placeholder="Message" required></textarea>
+        <button type="submit" id="submit" name="submit" value="send">Submit</button>
+    </form>
+    <div id="responseMessage"></div> <!-- Response message will appear here -->
+</div>
+
 
              
             <!--Contact form-->
@@ -714,4 +664,7 @@ include("Includes/Connect.php");
 
 
 </body>
+
+
 </html>
+
